@@ -1,10 +1,11 @@
 version: '3'
 services:
-    web:
-        image: containers.cisco.com/nchhabri/utils:my-res-app.0.0.1
-        command: python app.py
-        ports:
-        - "8800:8800"
-    redis:
-        image: containers.cisco.com/nchhabri/utils:redis
+  web:
+    #image: 'resource-res'
+    image: 'containers.cisco.com/nchhabri/utils:my-res-app.0.0.1'
+    command: 'python app.py'
+    ports: 
+     - "8800:8800"
+  redis:
+    image: 'containers.cisco.com/nchhabri/utils:redis'
     

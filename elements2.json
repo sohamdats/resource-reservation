@@ -1,0 +1,601 @@
+
+{
+    "xTR-1":{
+
+	"Role":"Fabric Edge router",
+
+	"IP":"10.225.117.184",
+	
+        "IP Address":"Console access:\n\ntelnet 10.64.69.160 port: 2006\n\nManagement IP address:\n10.225.117.184\n\n\nDHCP pool for 
+AP/Wireless clients:\n9.10.41.0/255.255.255.0 VLAN 41\n\n\nDHCP pool for Wired Clients:\n9.10.42.0/255.255.255.0 VLAN 42\n\n\nInterface
+ IP towards MS-BR1:\n9.10.43.2/255.255.255.252\n\n\nOSPF Area 0 Loopback address:\n3.3.3.3",
+
+	"Credentials":"telnet credentials:\n\npassword:\nC1sc0123!\n\nEnable password:\nCisco123!\n\nWarning:\nPDU details:
+\n\n10.105.108.90 outlet port 9 (user/cisco123)\n\nEnsure that you don't power cycle other outlet ports",
+
+	"Device":"Cisco 3850\nswitch - Edison"
+           },
+
+    "MS-BR1":{
+
+	"Role":"Fabric Border router and Map server co-resident",
+
+	"IP":"0.225.117.32",
+	
+	"IP Address":"Console access:\n\ntelnet 10.64.69.160 port: 2005\n\nManagement IP address:\n10.225.117.32\n\n\nInterface IP 
+towards xTR-1:\n9.10.43.1/255.255.255.252\n\n\nOSPF Area 0 Loopback address:\n4.4.4.4\n\n\nInterface towards 
+WLC :\n9.10.45.1/255.255.255.0 VLAN 45",
+
+	"Credentials":"SSH credentials:\n\nusername: admin\n\npassword: C1sc0123!\n\n\nEnable password:\nCisco123!\n\nWarning:
+\nPDU details:\n10.105.108.89 outlet port 6 (user/cisco123)\nEnsure that you don't power cycle other outlet ports",
+
+	"Device":"Cisco 3850\nswitch - Edison"
+
+    },
+    "WLC-1":{
+
+	"Role":"Wireless LAN Controller - Appliance",
+     
+        "IP":"9.10.45.10",
+	
+	"IP Address":"Console access:\n\ntelnet 10.64.69.160 port: 2002\n\n\nService Port : 10.225.117.68\n\n\nWLC 
+Mgmt interface IP:\n9.10.45.10 VLAN 45\n\n\nSNMP v2 enabled",
+
+	"Credentials":"username: admin\n\npassword: Cisco123!\n\n\nsnmp v2 crdentials:\n\nusername: public\npassword: public\n\n
+Connected to border 3/0/3",
+
+	"Device":"Cisco 5520"
+
+    },
+
+    "WLC-2":{
+
+	"Role":"Wireless LAN Controller - Appliance",
+
+        "IP":"10.64.69.160:2007",
+	
+	"IP Address":"Console access:\n\ntelnet\n10.64.69.160 port: 2007\n\n\nService Port :\n10.225.117.49",
+
+	"Credentials":"username: admin\n\npassword: Cisco123!\n\nConnected to border 3/0/4",
+
+	"Device":""
+
+    },
+
+    "AP-1":{
+
+	"Role":"Access Point with Fabric support",
+
+	"IP":"10.64.69.160:2014",
+
+	"IP Address":"Console access:\n\ntelnet 10.64.69.160 port: 2014\n\nmac : 18:8B:45:00:5E:B8",
+
+	"Credentials":"admin/Cisco123!\n\nEnable: Cisco123!",
+
+	"Device":"Cisco 1852i"
+
+    },
+
+    "AP-2":{
+
+	"Role":"Access Point with Fabric support",
+
+	"IP":"10.64.69.160:2009",
+	
+	"IP Address":"Console access:\n\ntelnet 10.64.69.160 port: 2009\n\nmac : 00:6B:F1:25:FB:60",
+
+	"Credentials":"",
+
+	"Device":""
+    },
+    "APIC-EM":{
+
+	"Role":"DNA-C Network Automation",
+
+	"IP":"",
+
+	"IP Address":"Depends on User APIC-EM installation.",
+
+	"Credentials":"",
+
+	"Device":"Running on a\nESXi as VM"
+	
+    },
+    "ME":{
+
+	"Role":"Mobility Express",
+
+	"IP":"9.31.25.101",
+
+	"IP Address":"Console Access:\ntelnet 10.64.69.160 port: 2025\nMgmt. ip : 9.31.25.101\nInternal AP ip : 9.31.25.100\nSSID configured:  SSID1\nCred: cisco/Cisco!123",
+
+	"Credentials":"",
+
+	"Device":""
+
+    },
+    
+    "Nyquist-setup-A":{
+
+             "Role":"Nyquist - 103",
+
+	     "IP":"NYQUIST setup",
+             "IP Address":"NYQUIST setup with Edge and Fusion controller",
+
+        "Credentials":"",
+
+             "Device":""
+
+     },
+     
+     "xTR-1-1":{
+     
+     "Role":"Fabric Edge router",
+     
+     "IP":"10.225.117.31",
+     
+     "IP Address":"Console access:\ntelnet 10.64.69.160 port: 2030\n\n\nMgmt. ip : 10.225.117.31\n\n\nDHCP pool for AP/Wireless clients:\n9.10.41.0/255.255.255.0 VLAN 41\n\n\nDHCP pool for Wired Clients:\n9.10.42.0/255.255.255.0 VLAN 42\n\n\nInterface IP towards MS-BR1: 9.10.43.2/255.255.255.252\n\n\nOSPF Area 0 Loopback address: 3.3.3.3",
+     
+     "Credentials":"telnet credentials:\n\nusername: admin\n\npassword: cisco123\n\nenable password:\ncisco123\n\n\nsnmpv2 : public/public",
+     
+     "Device":"Cisco 3850\nswitch - Edison"
+     
+     },
+     
+     "MS-BR1-1":{
+     
+     "Role":"Fabric Border router and Map server co-resident",
+     
+     "IP":"10.225.117.36",
+     
+     "IP Address":"Console access:\ntelnet 10.64.69.160 port: 2008\n\n\nMgmt. iP: 10.225.117.36\n\n\nnterface IP towards xTR-1: 9.10.43.1/255.255.255.252\n\n\nOSPF Area 0 Loopback address: 5.5.5.5\n\n\nInterface towards WLC : 9.10.45.1/255.255.255.0 VLAN 45",
+     
+     "Credentials":"telnet credentials:\n\nusername: admin\n\npassword: cisco123\n\nenable password:\ncisco123\n\n\nsnmpv2 : public/public",
+     
+     "Device":"Cisco 3850\nswitch - Edison"
+     
+     },
+     
+     "eCA-Switch":{
+     
+     "Role":"Integrated WLC",
+     
+	 "IP":"10.225.117.33",
+     
+     "IP Address":"Console access:\ntelnet 10.64.69.160 port: 2004\n\n\nSwitch Management Port : 10.225.117.33\n\n\nWLC Mgmt interface IP: 9.10.45.10 VLAN 45\n\n\nSNMP v2 enabled\n\n\nPDU details:\n10.105.108.89 port 14",
+     
+     "Credentials":"SSH credentials:\n\nusername: admin\n\npassword: cisco123\n\n\nenable password: cisco\n\n\nsnmp v2 credentials:\nusername: public\n\npassword: public",
+     
+      "Device":"Cisco 3850\nswitch - Edison"
+     
+     },
+     
+     "AP-1-1":{
+     
+     "Role":"Access Point with Fabric support",
+     
+     "IP":"10.64.69.160:2010",
+     
+     "IP Address":"Console access:telnet 10.64.69.160 port: 2010\n\n\nUsername: Cisco\n\nPassword: Cisco\n\n\nEnable password: Cisco",
+     
+     "Credentials":"",
+     
+     "Device":"Cisco 1810w"
+     
+     },
+     
+     "APIC-EM-1":{
+     
+     "Role":"DNA-C Network Automation",
+     
+     "IP":"",
+     
+     "IP Address":"Depends on User APIC-EM installation.",
+     
+     "Credentials":"",
+     
+     "Device":"Running on a ESXi as VM"
+     
+     },
+     
+     "eCA-Switch-1":{
+     
+     "Role":"Integrated WLC + Border + Map Server + xTR",
+     
+     "IP":"10.225.117.28",
+     
+     "IP Address":"Console access:\ntelnet 10.64.69.160 port: 2055\n\n\nSwitch Management Port : 10.225.117.28\n\n\nWLC Mgmt interface IP: 9.10.45.10 VLAN 45\n\n\nSNMP v2 enabled\n\n\nPDU details:\n10.105.108.238 port 8",
+     
+     "Credentials":"SSH credentials:\nusername: admin\n\npassword: cisco123\n\n\nenable password: Cisco123!\n\n\nsnmp v2 crdentials:\nusername: public\npassword: public",
+     
+     "Device":"Cisco 3850 switch - Edison"
+     
+     },
+     
+     "AP-1-2":{
+     
+     "Role":"Access Point with Fabric support",
+     
+     "IP":"10.64.69.160:2007",
+     
+     "IP Address":"Console access:\ntelnet 10.64.69.160 port: 2007\n\n\nUsername: Cisco\nPassword: Cisco\n\n\nEnable password: Cisco",
+     
+     "Credentials":"",
+     
+     "Device":"Cisco 2802i"
+     
+     },
+     
+     "APIC-EM-2":{
+     
+     "Role":"DNA-C Network Automation",
+     
+     "IP":"",
+     
+     "IP Address":"Depends on User APIC-EM installation.",
+     
+     "Credentials":"",
+     
+     "Device":"Running on a ESXi as VM"
+     
+     },
+     
+     "Lab-Private-network-switch":{
+     
+     "Role":"9.31.x.x private network switch",
+     
+     "IP":"10.64.69.160:2017",
+     
+     "IP Address":"Switch Console access:\ntelnet 10.64.69.160 port: 2017",
+     
+	 "Credentials":"",
+
+	 "Device":""
+     },
+     
+     "UCS-ESXi-1":{
+     
+     "Role":"ESXi server hosting eWLC VMs",
+     
+     "IP":"10.225.117.24",
+     
+     "IP Address":"10.225.117.24",
+     
+	 "Credentials":"",
+	 "Device":""
+     
+     },
+     
+     "UCS-ESXi-2":{
+     
+     "Role":"ESXi server hosting vWLC VM",
+     
+     "IP":"10.225.117.20",
+     
+     "IP Address":"10.225.117.20",
+     
+	 "Credentials":"",
+	 "Device":""
+     
+     },
+     
+     "ewlc-87":{
+     
+     "Role":"AP-1 3600 9.31.25.155",
+     
+     "IP":"10.64.69.160:2057",
+     
+     "IP Address":"telnet 10.64.69.160 port: 2057",
+     
+	 "Credentials":"Cisco/Cisco\nEnable: Cisco",
+
+	 "Device":""
+     
+     },
+     
+     "ewlc":{
+     
+     "Role":"AP-2 1832i – RF tag: 01C3DOE",
+     
+     "IP":"10.64.69.160:2028",
+     
+     "IP Address":"console access:10.64.69.160 2028\nConnected to Port 28 of 9.31.x switch",
+     
+	 "Credentials":"Cisco/Cisco\nEnable: Cisco",
+
+	 "Device":""
+     
+     },
+     
+     "ewlc-1":{
+     
+     "Role":"AP3 2802i -  RF Tag : 01C3D07",
+     
+     "IP":"10.225.117.27:2019",
+     
+     "IP Address":"console access: telnet 10.225.117.27 2019\n\nConnected to Port 29 of 9.31.x switch",
+     
+	 "Credentials":"Cisco/Cisco\nEnable: Cisco",
+
+	 "Device":""
+     
+     },
+     
+     "ewlc-2":{
+     
+     "Role":"AP-4 2802i -  RF Tag : 01B1CF3",
+     
+     "IP":"10.64.69.160:2013",
+     
+     "IP Address":"console access: telnet 10.64.69.160 2013\n\nConnected to Port 26 of 9.31.x switch",
+     
+	 "Credentials":"Cisco/Cisco\nEnable: Cisco",
+
+	 "Device":""
+     
+     },
+     
+     "ewlc-95":{
+     
+     "Role":"10.225.117.95 AP (9.31.25.140) RF Tag :01CA72",
+     
+     "IP":"10.225.117.241:2001",
+     
+     "IP Address":"telnet://10.225.117.241:2001\ntelnet://10.225.117.241:2002\n\n\ntelnet 10.64.69.160 port: 2023 (ap)",
+     
+	 "Credentials":"username : \n\nadmin\n\npassword : \nadmin\n\nsnmp \n:public/private",
+
+	 "Device":""
+     
+     },
+     
+     "ewlc-215":{
+     
+     "Role":"10.225.117.215",
+     
+     "IP":"telnet://10.225.117.236:1710",
+     
+     "IP Address":"telnet://10.225.117.236:1710\ntelnet://10.225.117.236:1711",
+     
+	 "Credentials":"username : \nadmin\n\n\npassword : \nadmin\n\nsnmp \n:public/private",
+
+	 "Device":""
+     
+     },
+     
+     "WLC-1-3":{
+
+	 "Role":"",
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2028 (P2 connected)",
+     
+	 "Credentials":"10.225.117.133\n(admin /Cisco123)",
+
+	 "Device":""
+     
+     },
+     
+    "WLC-2-3":{
+	"Role":"",
+     
+        "IP":"",
+     
+        "IP Address":"telnet 10.225.117.27 2008",
+     
+	"Credentials":"power is not connecting",
+
+	"Device":""
+     
+     },
+     
+     "WLC-3-WLC-AUTO-5520":{
+
+	 "Role":"",
+         "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2009 (P6 is connected )",
+     
+	 "Credentials":"10.225.117.144 - \nadmin/C1sc0123!\n9.10.45.144",
+
+	 "Device":""
+     
+     },
+     
+     "WLC-Auto-Fabric":{
+
+	 "Role":"",
+	 
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2025",
+     
+	 "Credentials":"Service port IP: \n10.225.117.143\n\nMgmt IP:\n9.10.45.143\n\nuser: admin\n\npassword: C1sc0123!",
+	 "Device":""
+     
+     },
+     
+    "WLC-5":{
+	"Role":"",
+	"IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2024 (p6 connected)",
+     
+	"Credentials":"10.225.117.131\n(admin /Cisco123)",
+
+	"Device":""
+     
+     },
+     
+    "Nyquist":{
+	"Role":"",
+     
+     "IP":"Nyquist-Interconnect01",
+     
+     "IP Address":"telnet 10.225.117.27 2005",
+     
+	"Credentials":"9.10.15.1 - vlan 2015",
+
+	"Device":""
+     
+     },
+     
+    "Nyquist-1":{
+	"Role":"",
+     
+     "IP":"10.225.117.130",
+     
+     "IP Address":"telnet 10.225.117.27 2004",
+     
+	"Credentials":"10.225.117.130\n\nuser: admin\n\npassword: \nC1sc0123!/C1sc0123!",
+	"Device":""
+     
+     },
+     
+     "Nyquist-142":{
+
+	 "Role":"",
+     "IP":"10.225.117.142",
+     
+     "IP Address":"telnet 10.225.117.27 2006 (P4 was connected )",
+     
+	 "Credentials":"10.x ip : \n10.225.117.142\n\n\nloopback : 7.7.7.7\n\n\nadmin / C1sc0123! /\nC1sc0123!",
+
+	 "Device":""
+     
+     },
+     
+    "Edison-Auto-Edge":{
+	"Role":"",
+     
+     "IP":"10.225.117.145",
+     
+     "IP Address":"telnet 10.225.117.27 2002 (P0 connected)",
+     
+	"Credentials":"10.x IP : \n10.225.117.145\n\n\nLoopback : 8.8.8.8\nadmin / C1sc0123! / \nCisco123!",
+	"Device":""
+     
+     },
+     
+     "Edison":{
+
+	 "Role":"",
+	 
+	 "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2003",
+     
+	 "Credentials":"",
+	 "Device":""
+     
+     },
+     
+    "AP1":{
+	"Role":"",
+     
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2007",
+     
+	"Credentials":"cisco/ Cisco\n\nenable:Cisco\n\n\nmac : \n80:E0:1D:80:BF:6C",
+
+	"Device":""
+     
+     },
+     
+    "AP2":{
+	
+	"Role":"",
+	
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27 2018",
+     
+	"Credentials":"uboot mode",
+
+	"Device":""
+     
+    },
+     
+     "AP3":{
+
+	 "Role":"",
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27:2012",
+     
+	 "Credentials":"Mac : \nE8:65:49:71:93:70\n\n\ncisco/ Cisco\nenable:Cisco",
+	 "Device":""
+     
+     },
+     
+     "AP4":{
+	 "Role":"",
+     "IP":"",
+     
+     "IP Address":"telnet 10.225.117.27:2020",
+     
+	 "Credentials":"console not reachable",
+
+	 "Device":""
+     
+     },
+     
+     "Talwar-5508":{
+
+	 "Role":"",
+     "IP":"",
+     
+     "IP Address":" 10.225.117.27:2027",
+     
+	 "Credentials":"10.225.117.134 (india /India123)",
+	 "Device":""
+     },
+     
+    "kannan-ise":{
+	
+     "Role":"",
+     
+     "IP":"10.225.117.160",
+     
+     "IP Address":"10.225.117.160",
+     
+     "Credentials":"10.225.117.160\n(admin /India123)",
+
+     "Device":""
+     
+     }
+     
+     }
+
+
+
+
+     
+     
+     
+     
+   
+     
+     
+     
+     
+     
+     
+
+
+     
+     
+     
+
+
+
+ 
+     
+     
+     
+    
+     
+     
+     
+     

@@ -6,6 +6,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Reserve</title>
+    <style>
+      .resource-table{
+          padding-top : 100px;
+      }
+      .table-responsive {
+           width: 97%;
+      }
+      p.navbar-brand.header {
+        padding-top: 30px;
+        font-size: 24px;
+        color: gray;
+      }
+      .navbar-brand {
+         padding: 17px 13px;
+      }
+      thead {
+           border-bottom-width: 1px;
+      }
+      
+    </style>
     <script>
       function show(name){
       $("#detail"+name).modal('toggle');
@@ -13,7 +33,9 @@
       
     function check(name){
      var server_url = 'localhost:8800/'+ name;
-     $.ajax({
+      //console.log(name);
+      $.ajax({
+      
       url: 'http://10.225.117.97:8800/'+name,
       type: "GET",
       success: function(msg){
@@ -24,26 +46,35 @@
         }
       },
       error: function(){
-       alert('error');
+      alert('error');
       }
        })
         }
-     
     $(function(){
     $(".dropdown-menu li a").click(function(){
       $(".minutesButton").text($(this).text());
      $(".minutesButton").val($(this).text());
      $(".minutesValue").val($(this).text());
-    
       });
     });
   </script>
   </head>
-
   <body>
-    <div class="container">
-      <table class="table table-bordered">
-	<thead>
+    <div class="container-fluid">
+      <div class="row">
+      <nav class="navbar navbar-default navbar-fixed-top">
+	<!--<div class="container-fluid">-->
+	  <img class = "cisco_logo navbar-brand " src="{{ url_for('static',filename='images/cisco.png') }}" style = "height:80px; width:120px"/ >
+          <p class="navbar-brand header">Resource Reservation
+<!--	    <div class="branding-strong" id="resource">Resource Reservation</div>-->
+	  </p>  
+      </nav>
+      
+      </div>
+      <div class="row">
+      <div class="resource-table" >
+      <table class="table table-bordered table-responsive" width="300px" style="margin-left:20px">
+	<!--
 	  <tr>
 	    <th>Element</th>
 	    <th>IP Address</th>
@@ -51,8 +82,15 @@
 	    <th>Reserve</th>
 	    <th>State</th>
 	  </tr>	 
-	</thead>
+	-->
 	<tbody>
+	  <tr>
+	    <td style="font-weight:bold">Element</td>
+	    <td style="font-weight:bold">IP Address</td>
+	    <td style="font-weight:bold">Details</td>
+	    <td style="font-weight:bold">Reserve</td>
+	    <td style="font-weight:bold">State</td>
+	  </tr>
 	  {% for element,element_state in elements.items() %}
 	  <tr>
 	    <td class="col-md-2">{{ element }}</td>
@@ -67,7 +105,9 @@
 	  </tr>
 	  {% endfor %}
 	</tbody>
-      </table>      
+      </table>
+      </div>
+      </div>
     </div>
     {% for element,element_state in elements.items() %}
     <div id="{{element}}" class="modal fade" role="dialog">

@@ -3,15 +3,16 @@ import redis
 import datetime
 from db import DB
 import json
+import os
 
 app = Flask(__name__)
-d = DB(host='redis')
+d = DB()
 
 
 @app.route('/')
 def index():
     
-    e_data = json.load(open('elements.json'),strict=False)
+    e_data = json.load(open('elements2.json'),strict=False)
     for element,ele_p in e_data.items():
         d.store_element(element)
         d.store_eprop(element,'Role',ele_p['Role'])
